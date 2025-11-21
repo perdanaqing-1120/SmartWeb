@@ -34,13 +34,29 @@
         <div class="container">
             <h1>lampu</h1>
             <div class="on">
-                <h1>on</h1>
                 <button class="btn btn-primary" type="button" onclick="on()">on</button>
             </div>
 
             <div class="off">
-                <h1>off</h1>
                 <button type="button" onclick="off()" class="btn btn-danger">Off</button>
+            </div>
+            <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+                <a class="navbar-brand" href="#">Jika tidak berhasil</a>
+                <!-- <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading1">First</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scrollspyHeading2">Second</a>
+                    </li>
+                </ul> -->
+            </nav>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+                data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                <h4 id="scrollspyHeading1">ON</h4>
+                <a href="http://192.168.1.29/on">192.168.1.29/on</a>
+                <h4 id="scrollspyHeading2">OFF</h4>
+                <a href="http://192.168.1.29/off">192.168.1.29/off</a>
             </div>
         </div>
     </div>
