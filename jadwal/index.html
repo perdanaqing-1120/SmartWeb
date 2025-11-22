@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styleMain.css">
+    <link rel="stylesheet" href="/jadwal/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"
+        defer></script>
+    <title>Jadwal</title>
+</head>
+
+<body>
+    <div class="root">
+        <!-- navbar -->
+        <nav class="navbar bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Jadwal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/IoT/IoT.html">IoT</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/jadwal/index.html">Jadwal</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- jumlah table -->
+
+
+        <!-- table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ingin dilakukan</th>
+                    <th scope="col">Waktu</th>
+                    <!-- <th scope="col">Handle</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="jadwal" scope="row">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                1
+                            </label>
+                        </div>
+                    </th>
+                    <td><input placeholder="masukkan" type="text"></td>
+                    <td><input type="time"></td>
+                    <!-- <td>@mdo</td> -->
+                </tr>
+                <tr>
+                    <th class="jadwal" scope="row">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                2
+                            </label>
+                        </div>
+                    </th>
+                    <td><input placeholder="masukkan" type="text"></td>
+                    <td><input type="time"></td>
+                    <!-- <td>@fat</td> -->
+                </tr>
+                <tr>
+                    <th class="jadwal" scope="row">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                            <label class="form-check-label" for="checkDefault">
+                                3
+                            </label>
+                        </div>
+                    </th>
+                    <td><input placeholder="masukkan" type="text"></td>
+                    <td><input type="time"></td>
+                    <!-- <td>@social</td> -->
+                </tr>
+            </tbody>
+        </table>
+        <h4>halaman belum sepenuhnya jadi</h4>
+    </div>
+</body>
+
+</html>

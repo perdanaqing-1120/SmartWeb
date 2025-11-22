@@ -11,6 +11,10 @@ body {
     line-height: 1.6;
 }
 
+.root {
+    background-color: aliceblue;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
