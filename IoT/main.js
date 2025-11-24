@@ -6,7 +6,7 @@ const suhu = document.getElementById("suhu")
 
 // status
 setInterval(() => {
-    fetch(`${endPoint}/connect`)
+    fetch(`${endPoint}/checkConnect`)
         .then(response => {
             if (!response.ok) {
                 throw new Error();
@@ -41,33 +41,26 @@ function off() {
 }
 
 // sensor
-let count = false
-
 setInterval(() => {
-    count = !count
+    // suhu
+    fetch(`${endPoint}/suhu`, {
+        method: "POST"
+    })
+        .then(response => response.text())
+        .then(result => {
+            if (result > 0) {
+                suhu.value = result
+            }
+        });
 
-    if (count) {
-        // suhu
-        fetch(`${endPoint}/suhu`, {
-            method: "POST"
-        })
-            .then(response => response.text())
-            .then(result => {
-                if (result > 0) {
-                    suhu.value = result
-                }
-            })
-    } else {
-        // kelembapan
-        fetch(`${endPoint}/kelembapan`, {
-            method: "POST"
-        })
-            .then(response => response.text())
-            .then(result => {
-                if (result > 0) {
-                    kelembapan.value = result
-
-                }
-            })
-    }
+    // kelembapan
+    fetch(`${endPoint}/kelembapan`, {
+        method: "POST"
+    })
+        .then(response => response.text())
+        .then(result => {
+            if (result > 0) {
+                kelembapan.value = result
+            }
+        });
 }, 2500);
