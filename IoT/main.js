@@ -41,26 +41,32 @@ function off() {
 }
 
 // sensor
-setInterval(() => {
-    // suhu
-    fetch(`${endPoint}/suhu`, {
-        method: "POST"
-    })
-        .then(response => response.text())
-        .then(result => {
-            if (result > 0) {
-                suhu.value = result
-            }
-        });
+let count = false
 
-    // kelembapan
-    fetch(`${endPoint}/kelembapan`, {
-        method: "POST"
-    })
-        .then(response => response.text())
-        .then(result => {
-            if (result > 0) {
-                kelembapan.value = result
-            }
-        });
-}, 2500);
+setInterval(() => {
+    count = !count
+
+    if (count) {
+        // suhu
+        fetch(`${endPoint}/suhu`, {
+            method: "POST"
+        })
+            .then(response => response.text())
+            .then(result => {
+                if (result > 0) {
+                    suhu.value = result
+                }
+            })
+    } else {
+        // kelembapan
+        fetch(`${endPoint}/kelembapan`, {
+            method: "POST"
+        })
+            .then(response => response.text())
+            .then(result => {
+                if (result > 0) {
+                    kelembapan.value = result
+                }
+            })
+    }
+}, 1000);
