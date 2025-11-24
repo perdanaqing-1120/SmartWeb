@@ -14,11 +14,11 @@ setInterval(() => {
             return response.text()
         })
         .then(data => {
-            statusWiFi.value = data
+            statusWiFi.value = "Connected"
         })
         .catch(err => {
             console.log(err.message);
-            statusWiFi.value = "Connections"
+            statusWiFi.value = "Connect..."
         })
 }, 2000);
 
@@ -53,6 +53,7 @@ setInterval(() => {
         })
             .then(response => response.text())
             .then(result => {
+                console.log(result);
                 if (result > 0) {
                     suhu.value = result
                 }
@@ -64,9 +65,11 @@ setInterval(() => {
         })
             .then(response => response.text())
             .then(result => {
+                console.log(result);
+                
                 if (result > 0) {
                     kelembapan.value = result
                 }
             })
     }
-}, 1000);
+}, 2000);
