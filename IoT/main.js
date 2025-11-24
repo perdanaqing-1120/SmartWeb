@@ -6,7 +6,7 @@ const suhu = document.getElementById("suhu")
 
 // status
 setInterval(() => {
-    fetch(`${endPoint}/on`)
+    fetch(`${endPoint}/connect`)
         .then(response => {
             if (!response.ok) {
                 throw new Error();
