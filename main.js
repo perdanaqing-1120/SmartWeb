@@ -11,14 +11,6 @@ const aksesApiBmgk = "https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=73.12.0
 fetch(aksesApiBmgk)
     .then(res => res.json())
     .then(result => {
-        console.log(result);
-
-<<<<<<< HEAD
-        // waktuT12.value = result.data[0].cuaca[0][0].local_datetime;
-        // arahAngin.value = `${result.data[0].cuaca[0][0].wd_deg} derajat`;
-        // suhu.value = `${result.data[0].cuaca[0][0].t} derajat`;
-        // kelembapan.value = `${result.data[0].cuaca[0][0].hu}%`;
-        // cuaca.value = result.data[0].cuaca[0][0].weather_desc;
 
         let hariPrediksi = 1;
         let i = 0;
@@ -70,11 +62,3 @@ fetch(aksesApiBmgk)
             ++i
         });
     })
-=======
-        waktuT12.value = result.data[0].cuaca[0][0].local_datetime;
-        arahAngin.value = `${result.data[0].cuaca[0][0].wd_deg} derajat`;
-        suhu.value = `${result.data[0].cuaca[0][0].t} derajat`;
-        kelembapan.value = `${result.data[0].cuaca[0][0].hu}%`;
-        cuaca.value = result.data[0].cuaca[0][0].weather_desc;
-    })
->>>>>>> 470040dff6f9ab43ce5bba6fdaf555a0ba85d937
