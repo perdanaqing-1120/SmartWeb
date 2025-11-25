@@ -1,8 +1,8 @@
 // setup
-const endPoint = "http://192.168.1.29"
 const statusWiFi = document.getElementById("status")
 const kelembapan = document.getElementById("kelembapan")
 const suhu = document.getElementById("suhu")
+const endPoint = "http://192.168.1.29"
 
 // status
 setInterval(() => {
@@ -29,7 +29,7 @@ function on() {
         method: "POST"
     })
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => {return})
 }
 
 function off() {
@@ -37,7 +37,7 @@ function off() {
         method: "POST"
     })
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => {return})
 }
 
 // sensor
@@ -53,7 +53,6 @@ setInterval(() => {
         })
             .then(response => response.text())
             .then(result => {
-                console.log(result);
                 if (result > 0) {
                     suhu.value = result
                 }
@@ -65,8 +64,6 @@ setInterval(() => {
         })
             .then(response => response.text())
             .then(result => {
-                console.log(result);
-                
                 if (result > 0) {
                     kelembapan.value = result
                 }
