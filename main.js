@@ -12,7 +12,7 @@ fetch(aksesApiBmgk)
     .then(result => {
         console.log(result);
 
-        waktuT12.value = result.data[0].cuaca[0][0].utc_datetime;
+        waktuT12.value = result.data[0].cuaca[0][0].local_datetime;
         arahAngin.value = `${result.data[0].cuaca[0][0].wd_deg} derajat`;
         suhu.value = `${result.data[0].cuaca[0][0].t} derajat`;
         kelembapan.value = `${result.data[0].cuaca[0][0].hu}%`;
