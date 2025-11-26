@@ -43,33 +43,22 @@
             </div>
         </nav>
 
-        <!-- <div class="container">
-            <h1>Prediksi cuaca</h1>
-            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-                data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-
-                <h4 id="scrollspyHeading2">Waktu</h4>
-                <input id="waktuT12" class="input mb-4" type="text" readonly />
-
-                <h4 id="scrollspyHeading2">Cuaca</h4>
-                <input id="cuaca" class="input mb-4" type="text" readonly />
-
-                <h4 id="scrollspyHeading1">Arah angin</h4>
-                <input id="arahAngin" class="input mb-4" type="text" readonly />
-
-                <h4 id="scrollspyHeading1">Suhu</h4>
-                <input id="suhu" class="input mb-4" type="text" readonly />
-
-                <h4 id="scrollspyHeading1">Kelembapan</h4>
-                <input id="kelembapan" class="input mb-4" type="text" readonly />
-            </div>
-        </div> -->
-
         <div class="container">
-            <h1>Prediksi cuaca</h1>
+            <h1>Prediksi cuaca
+            </h1>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio" onclick="hariPrediksi(0)" id="btnradio1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio1">Hari ini</label>
+
+                <input type="radio" class="btn-check" name="btnradio" onclick="hariPrediksi(1)" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio2">Besok</label>
+
+                <input type="radio" class="btn-check" name="btnradio" onclick="hariPrediksi(2)" id="btnradio3" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio3">Lusa</label>
+            </div>
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
                 data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-                
+
                 <div class="" id="prediksiCuaca">
                     <!-- data akan masuk disini -->
                 </div>

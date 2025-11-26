@@ -1,3 +1,6 @@
+const btnradio1 = document.getElementById("btnradio1")
+const btnradio2 = document.getElementById("btnradio2")
+
 const waktuT12 = document.getElementById("waktuT12")
 const cuaca = document.getElementById("cuaca")
 const arahAngin = document.getElementById("arahAngin")
@@ -7,58 +10,66 @@ const prediksiCuaca = document.getElementById("prediksiCuaca")
 
 const aksesApiBmgk = "https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=73.12.04.1003"
 
-// data bmkg
-fetch(aksesApiBmgk)
-    .then(res => res.json())
-    .then(result => {
+let hariPrediksiCount = 0;
 
-        let hariPrediksi = 1;
-        let i = 0;
-        const waktuPrediksi = result.data[0].cuaca[hariPrediksi];
+function hariPrediksi(hari) {
+    hariPrediksiCount = hari;
+    prediksiCuaca.innerHTML = ""; // reset tampilan
+    let i = 0; // reset index tiap klik
 
-        waktuPrediksi.forEach(waktuPrediksi => {
-            const zonaWaktu = document.createElement("input");
-            const namaZonaWaktu = document.createElement("h4");
-            zonaWaktu.classList = "input"
-            namaZonaWaktu.textContent = "waktu"
-            zonaWaktu.value = result.data[0].cuaca[hariPrediksi][i].local_datetime
-            prediksiCuaca.appendChild(namaZonaWaktu);
-            prediksiCuaca.appendChild(zonaWaktu);
+    fetch(aksesApiBmgk)
+        .then(res => res.json())
+        .then(result => {
 
+            const dataHari = result.data[0].cuaca[hariPrediksiCount];
 
-            const arahAngin = document.createElement("input");
-            arahAngin.classList = "input"
-            let arahAnginTrans = result.data[0].cuaca[hariPrediksi][i].wd_to
-            if (arahAnginTrans == "E") {
-                arahAnginTrans = "Timur"
-            } else if (arahAnginTrans == "NE") {
-                arahAnginTrans = "Timur Laut"
-            } else if (arahAnginTrans == "SE") {
-                arahAnginTrans = "Tenggara"
-            } else if (arahAnginTrans == "NW") {
-                arahAnginTrans = "Barat Laut"
-            }
-            arahAngin.value = arahAnginTrans
-            prediksiCuaca.appendChild(arahAngin);
+            dataHari.forEach(item => {
+                // Waktu
+                const labelWaktu = document.createElement("h4");
+                labelWaktu.textContent = "Waktu";
+                const inputWaktu = document.createElement("input");
+                inputWaktu.className = "input";
+                inputWaktu.readOnly = true;
+                inputWaktu.value = item.local_datetime;
+                prediksiCuaca.appendChild(labelWaktu);
+                prediksiCuaca.appendChild(inputWaktu);
 
+                // Arah angin
+                const arah = document.createElement("input");
+                arah.className = "input";
+                arah.readOnly = true;
 
-            const suhu = document.createElement("input");
-            suhu.classList = "input"
-            suhu.value = result.data[0].cuaca[hariPrediksi][i].t + "*C"
-            prediksiCuaca.appendChild(suhu);
+                let arahAnginTrans = item.wd_to;
+                if (arahAnginTrans === "E") arahAnginTrans = "Timur";
+                else if (arahAnginTrans === "NE") arahAnginTrans = "Timur Laut";
+                else if (arahAnginTrans === "SE") arahAnginTrans = "Tenggara";
+                else if (arahAnginTrans === "NW") arahAnginTrans = "Barat Laut";
 
+                arah.value = arahAnginTrans;
+                prediksiCuaca.appendChild(arah);
 
-            const kelembaapan = document.createElement("input");
-            kelembaapan.classList = "input"
-            kelembaapan.value = result.data[0].cuaca[hariPrediksi][i].hu + "%"
-            prediksiCuaca.appendChild(kelembaapan);
+                // Suhu
+                const suhuEl = document.createElement("input");
+                suhuEl.className = "input";
+                suhuEl.readOnly = true;
+                suhuEl.value = item.t + "°C";
+                prediksiCuaca.appendChild(suhuEl);
 
+                // Kelembapan
+                const kelembapanEl = document.createElement("input");
+                kelembapanEl.className = "input";
+                kelembapanEl.readOnly = true;
+                kelembapanEl.value = item.hu + "%";
+                prediksiCuaca.appendChild(kelembapanEl);
 
-            const cuaca = document.createElement("input");
-            cuaca.classList = "input"
-            cuaca.value = result.data[0].cuaca[hariPrediksi][i].weather_desc
-            prediksiCuaca.appendChild(cuaca);
+                // Cuaca
+                const cuacaEl = document.createElement("input");
+                cuacaEl.className = "input";
+                cuacaEl.readOnly = true;
+                cuacaEl.value = item.weather_desc;
+                prediksiCuaca.appendChild(cuacaEl);
 
-            ++i
+                i++;
+            });
         });
-    })
+}
