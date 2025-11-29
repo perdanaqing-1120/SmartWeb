@@ -19,10 +19,7 @@ function hariPrediksi(hari) {
 
     fetch(aksesApiBmgk)
         .then(res => res.json())
-        .then(result => {
-
-            console.log(result);
-            
+        .then(result => {            
 
             const dataHari = result.data[0].cuaca[hariPrediksiCount];
 

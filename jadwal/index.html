@@ -17,7 +17,7 @@
 <body>
     <div class="root">
         <!-- navbar -->
-        <nav class="navbar bg-primary" data-bs-theme="dark">
+        <nav class="navbar bg-danger" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Jadwal</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -53,62 +53,42 @@
         </nav>
 
         <!-- jumlah table -->
-
+        <div class="container">
+            <input id="timeTable" class="form-control" type="number" value="1" />
+            <button id="timeTableSubmit" class="btn btn-danger">Submit</button>
+        </div>
 
         <!-- table -->
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Ingin dilakukan</th>
-                    <th scope="col">Waktu</th>
-                    <!-- <th scope="col">Handle</th> -->
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th class="jadwal" scope="row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                            <label class="form-check-label" for="checkDefault">
-                                1
-                            </label>
-                        </div>
-                    </th>
-                    <td><input placeholder="masukkan" type="text"></td>
-                    <td><input type="time"></td>
-                    <!-- <td>@mdo</td> -->
-                </tr>
-                <tr>
-                    <th class="jadwal" scope="row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                            <label class="form-check-label" for="checkDefault">
-                                2
-                            </label>
-                        </div>
-                    </th>
-                    <td><input placeholder="masukkan" type="text"></td>
-                    <td><input type="time"></td>
-                    <!-- <td>@fat</td> -->
-                </tr>
-                <tr>
-                    <th class="jadwal" scope="row">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                            <label class="form-check-label" for="checkDefault">
-                                3
-                            </label>
-                        </div>
-                    </th>
-                    <td><input placeholder="masukkan" type="text"></td>
-                    <td><input type="time"></td>
-                    <!-- <td>@social</td> -->
-                </tr>
-            </tbody>
-        </table>
-        <h4>halaman belum sepenuhnya jadi</h4>
+        <div class="container">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Ingin dilakukan</th>
+                        <th scope="col">Waktu</th>
+                        <!-- <th scope="col">Handle</th> -->
+                    </tr>
+                </thead>
+                <!-- jumlah table sesuai input -->
+                <tbody id="result">
+                    <tr>
+                        <!-- checkBox -->
+                    </tr>
+                    <tr>
+                        <!-- isi -->
+                    </tr>
+                    <tr>
+                        <!-- waktu -->
+                    </tr>
+                </tbody>
+            </table>
+            <button class="btn btn-danger" onclick="submit()">Submit</button>
+            <h4>halaman belum sepenuhnya jadi</h4>
+        </div>
     </div>
+
+    <script src="/jadwal/jadwal.js" defer></script>
 </body>
 
 </html>
