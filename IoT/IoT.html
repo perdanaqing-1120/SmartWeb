@@ -47,18 +47,25 @@
             <h1>Status WiFi</h1>
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
                 data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-                <input id="status" class="input" type="text" value="Searching For WiFi" readonly />
+                <div class="timer-controls d-grid gap-1 mx-auto col-md-7">
+                    <input id="status" class="input" type="text" value="Searching For WiFi" readonly />
+                </div>
             </div>
         </div>
 
         <div class="container">
             <h1>lampu</h1>
-            <div class="on">
-                <button class="btn btn-primary" type="button" onclick="on()">on</button>
-            </div>
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+                data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                <div class="timer-controls d-grid gap-1 col-md-7 mx-auto">
+                    <div class="on">
+                        <button class="btn btn-primary" type="button" onclick="on()">on</button>
+                    </div>
 
-            <div class="off">
-                <button type="button" onclick="off()" class="btn btn-danger">Off</button>
+                    <div class="off">
+                        <button type="button" onclick="off()" class="btn btn-danger">Off</button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -67,12 +74,28 @@
             <h1>sensor</h1>
             <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
                 data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-                <h4 id="scrollspyHeading2">suhu</h4>
-                <input id="suhu" class="input" type="text" readonly />
+                <div class="timer-controls d-grid gap-1 col-md-7 mx-auto">
+                    <h4 id="scrollspyHeading2">suhu</h4>
+                    <input id="suhu" class="input" type="text" readonly />
 
-                <h4 id="scrollspyHeading1">kelembapan</h4>
-                <input id="kelembapan" class="input" type="text" readonly />
+                    <h4 id="scrollspyHeading1">kelembapan</h4>
+                    <input id="kelembapan" class="input" type="text" readonly />
+                </div>
             </div>
+        </div>
+
+        <div class="container">
+            <h1>set timer</h1>
+            <div class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+                <div class="timer-controls d-grid gap-1 col-md-7 mx-auto">
+                    <label for="outputAlarmCondition" class="form-label">Output</label>
+                    <input id="outputAlarmCondition" class="form-control" type="text" readonly />
+                    <button type="button" onclick="setTimer()" class="btn btn-success">Set</button>
+                    <button type="button" onclick="alarmONOFF()" class="btn btn-danger">ON/OFF</button>
+                    <button type="button" onclick="alarmRESET()" class="btn btn-warning">Reset</button>
+                </div>
+            </div>
+            <h4 id="scrollspyHeading1">Belum jadi</h4>
         </div>
 
     </div>

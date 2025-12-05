@@ -1,6 +1,7 @@
 // setup
 const statusWiFi = document.getElementById("status")
 const kelembapan = document.getElementById("kelembapan")
+const outputAlarmCondition = document.getElementById("outputAlarmCondition")
 const suhu = document.getElementById("suhu")
 const endPoint = "http://192.168.1.29"
 
@@ -29,7 +30,7 @@ function on() {
         method: "POST"
     })
         .then(response => response.text())
-        .then(result => {return})
+        .then(result => { return })
 }
 
 function off() {
@@ -37,7 +38,7 @@ function off() {
         method: "POST"
     })
         .then(response => response.text())
-        .then(result => {return})
+        .then(result => { return })
 }
 
 // sensor
@@ -70,3 +71,22 @@ setInterval(() => {
             })
     }
 }, 2000);
+
+// set timer
+function alarmONOFF() {
+    fetch(`${endPoint}/alarmONOFF`)
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+            outputAlarmCondition.value = result;
+        })
+}
+
+function alarmRESET() {
+    fetch(`${endPoint}/alarmRESET`)
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+            outputAlarmCondition.value = result;
+        })
+}
