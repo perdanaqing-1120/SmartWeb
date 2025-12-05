@@ -83,7 +83,7 @@ function alarmONOFF() {
 }
 
 function alarmRESET() {
-    fetch(`${endPoint}/alarmRESET`)
+    fetch(`${endPoint}/alarmReset`)
         .then(response => response.text())
         .then(result => {
             console.log(result);
